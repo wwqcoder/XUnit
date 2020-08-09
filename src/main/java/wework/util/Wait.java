@@ -13,8 +13,13 @@ import wework.page.MainPage;
 public class Wait {
 
     public static void displayWaitToBeClickable(WebDriver driver, int seconds, By by){
-        new WebDriverWait(MainPage.webDriver,seconds).until(
+        new WebDriverWait(driver,seconds).until(
                 ExpectedConditions.elementToBeClickable(by));
+    }
+
+    public static void displayWaitVisibility(WebDriver driver, int seconds, By by){
+        new WebDriverWait(driver,seconds).until(
+                ExpectedConditions.visibilityOfElementLocated(by));
     }
 
 }

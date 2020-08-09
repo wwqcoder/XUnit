@@ -1,10 +1,10 @@
 package wework.page;
 
-import base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,9 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @Autor weiqi.wang
  **/
 
-public class MainPage {
-
-    public static WebDriver webDriver = null;
+public class MainPage extends BasePage{
 
     public MainPage() {
         //System.setProperty("webdriver.chrome.driver","D:\\software\\chromedriver_win32\\chromedriver.exe");
@@ -32,6 +30,6 @@ public class MainPage {
     public ContactPage toContact(){
         webDriver.findElement(By.id("menu_contacts")).click();
         webDriver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        return new ContactPage();
+        return new ContactPage(webDriver);
     }
 }
