@@ -1,12 +1,6 @@
 package wework.page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * @Date 2020/8/7
@@ -16,20 +10,11 @@ import java.util.concurrent.TimeUnit;
 public class MainPage extends BasePage{
 
     public MainPage() {
-        //System.setProperty("webdriver.chrome.driver","D:\\software\\chromedriver_win32\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver","/Users/wangweiqi/Downloads/driver/chromedriver");
-
-        //复用浏览器
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("debuggerAddress", "127.0.0.1:9222");
-        webDriver = new ChromeDriver(options);
-        //webDriver = new ChromeDriver();
-        webDriver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        super();
     }
 
     public ContactPage toContact(){
-        webDriver.findElement(By.id("menu_contacts")).click();
-        webDriver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        click(By.id("menu_contacts"));
         return new ContactPage(webDriver);
     }
 }

@@ -4,7 +4,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import wework.page.ContactPage;
 import wework.page.MainPage;
-import wework.util.Wait;
+
+import java.io.UnsupportedEncodingException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @Date 2020/8/7
@@ -22,13 +25,24 @@ public class TestContact {
     }
 
     @Test
-    void testAddMember(){
-        contactPage.addMember("3","3","16601360633");
+    void testAddMember() throws InterruptedException {
+        String username = contactPage.addMember("3", "3", "16601360633").search("3").getUsername();
+        assertEquals(username,3);
         /// TODO: 2020/8/7
     }
 
     @Test
     void testSearch() throws InterruptedException {
         contactPage.search("3").delete();
+    }
+
+    @Test
+    void TestImportFromFile() throws UnsupportedEncodingException {
+        contactPage.importFromFile("D:/project/XUnit/src/main/resources/通讯录批量导入模板.xlsx");
+    }
+
+    @Test
+    void addDepartment(){
+        contactPage.addDepartment("abc").deleteDepartment("abc");
     }
 }

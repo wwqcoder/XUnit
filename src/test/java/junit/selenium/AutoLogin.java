@@ -1,25 +1,43 @@
 package junit.selenium;
 
-import base.BaseTest;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.StringTokenizer;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Date 2020/8/7
  * @Autor weiqi.wang
  **/
-public class AutoLogin extends BaseTest {
+public class AutoLogin {
+
+    public RemoteWebDriver webDriver;
+
+    @BeforeAll
+    public void before(){
+        //System.setProperty("webdriver.chrome.driver","D:\\software\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","/Users/wangweiqi/Downloads/driver/chromedriver");
+
+        //复用浏览器
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("debuggerAddress", "127.0.0.1:9222");
+        webDriver = new ChromeDriver(options);
+        //webDriver = new ChromeDriver();
+        webDriver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+
+
+    }
+
+
     /**
      * 切记 访问网址后加cookie，再访问网址
      * @throws InterruptedException
