@@ -1,4 +1,4 @@
-package wework.page;
+package test_web.wework.page;
 
 import org.openqa.selenium.By;
 

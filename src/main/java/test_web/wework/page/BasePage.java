@@ -1,4 +1,4 @@
-package wework.page;
+package test_web.wework.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;

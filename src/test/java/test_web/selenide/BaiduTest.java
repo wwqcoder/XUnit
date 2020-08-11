@@ -1,4 +1,4 @@
-package junit.selenide;
+package test_web.selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;

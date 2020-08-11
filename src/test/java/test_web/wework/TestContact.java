@@ -1,9 +1,9 @@
-package wework;
+package test_web.wework;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import wework.page.ContactPage;
-import wework.page.MainPage;
+import test_web.wework.page.ContactPage;
+import test_web.wework.page.MainPage;
 
 import java.io.UnsupportedEncodingException;
 

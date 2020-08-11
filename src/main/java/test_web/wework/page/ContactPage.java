@@ -1,12 +1,10 @@
-package wework.page;
+package test_web.wework.page;
 
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLDecoder;
 
 /**
  * @Date 2020/8/7
