@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class SampleTest {
+public class Sample01Test {
 
   private AndroidDriver driver;
 
